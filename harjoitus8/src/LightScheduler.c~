@@ -1,0 +1,15 @@
+#include "LightScheduler.h"
+
+void LightScheduler_Create(void)
+{
+}
+
+void LightScheduler_Destroy(void)
+{
+}
+
+void LighScheduler_TurnOn(int id, int day, int minute)
+{
+
+}
+

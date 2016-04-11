@@ -1,0 +1,16 @@
+#ifndef D_LightScheduler_H
+#define D_LightScheduler_H
+
+/**********************************************************
+ *
+ * LightScheduler is responsible for ...
+ *
+ **********************************************************/
+
+enum day {SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THRUSDAY, FRIDAY, SATURDAY, EVERYDAY};
+
+void LightScheduler_Create(void);
+void LightScheduler_Destroy(void);
+void LightScheduler_ScheduleTurnOn(int id, int day, int minute);
+
+#endif  /* D_FakeLightScheduler_H */
