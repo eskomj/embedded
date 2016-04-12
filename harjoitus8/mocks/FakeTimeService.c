@@ -5,6 +5,7 @@ int time, day;
 void FakeTimeService_Create(void)
 {
   time = -1;
+
   day = -1;
 }
 
