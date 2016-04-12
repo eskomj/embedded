@@ -7,11 +7,6 @@
  *
  **********************************************************/
 
-typedef enum Day {
-    NOT_A_DAY=-4,
-    EVERYDAY=-3, WEEKDAY=-2, WEEKEND=-1,
-    SUNDAY=1, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
-} Day;
 
 
 void LightScheduler_Create(void);

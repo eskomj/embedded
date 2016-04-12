@@ -1,6 +1,7 @@
 extern "C"
 {
 #include "LightScheduler.h"
+#include "TimeService.h"
 }
 
 #include "CppUTest/TestHarness.h"
