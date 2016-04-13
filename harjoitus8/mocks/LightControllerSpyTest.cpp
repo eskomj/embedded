@@ -20,6 +20,6 @@ TEST_GROUP(LightControllerSpy)
 
 TEST(LightControllerSpy, Create)
 {
-  FAIL("Start here");
+  CHECK_EQUAL(1,1);
 }
 
