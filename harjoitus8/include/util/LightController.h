@@ -8,6 +8,13 @@
 #ifndef INCLUDE_UTIL_LIGHTCONTROLLER_H_
 #define INCLUDE_UTIL_LIGHTCONTROLLER_H_
 
-typedef enum states{LIGHT_OFF, LIGHT_ON, LIGHT_STATE_UNKNOWN} states;
+typedef enum
+{
+	LIGHT_ID_UNKNOWN = -1, LIGHT_STATE_UNKNOWN = -1,
+	LIGHT_OFF = 0, LIGHT_ON = 1
+} LightState;
+
+void LightController_TurnOn(int id);
+void LightController_TurnOff(int id);
 
 #endif /* INCLUDE_UTIL_LIGHTCONTROLLER_H_ */
