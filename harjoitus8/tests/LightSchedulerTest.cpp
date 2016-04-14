@@ -1,11 +1,13 @@
 extern "C"
 {
 #include "LightScheduler.h"
-#include "TimeService.h"
-}
-
-#include "CppUTest/TestHarness.h"
 #include "LightControllerSpy.h"
+#include "FakeTimeService.h"
+//#include "FakeRandomMinute.h"
+}
+#include "CppUTest/TestHarness.h"
+
+
 
 TEST_GROUP(LightScheduler)
 {
@@ -27,12 +29,12 @@ TEST(LightScheduler, ScheduleOnEverydayNotTimeYet)
   //FakeTimeService_SetMinute(1199);
 }
 
-/*
-TEST(LightScheduler, NoChangetoLightsDuringInitialization)
+
+TEST(LightScheduler, NoChangeToLightsDuringInitialization)
 {
-   LONGS_EQUAL(LIGHT_ID_UNKNOWN, LighControllerSpy_GetLastId());
-   LONGS_EQUALS(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
+    LONGS_EQUAL(LIGHT_ID_UNKNOWN, LightControllerSpy_GetLastId());
+    LONGS_EQUAL(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
 }
-*/
+
 
 
