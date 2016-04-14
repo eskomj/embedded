@@ -11,10 +11,8 @@
 
 void LightControllerSpy_Create(void);
 void LightControllerSpy_Destroy(void);
-
-void LightControllerSpy_On(int id);
-void LightControllerSpy_Off(int id);
-void LightControllerSpy_GetLastId(void);
-void LightControllerSpy_GetState(void);
+int LightControllerSpy_GetLastId(void);
+int LightControllerSpy_GetLastState(void);
+int LightControllerSpy_GetEventCounts(void);
 
 #endif  /* D_FakeLightControllerSpy_H */
