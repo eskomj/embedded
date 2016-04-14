@@ -27,11 +27,12 @@ TEST(LightScheduler, ScheduleOnEverydayNotTimeYet)
   //FakeTimeService_SetMinute(1199);
 }
 
-
+/*
 TEST(LightScheduler, NoChangetoLightsDuringInitialization)
 {
    LONGS_EQUAL(LIGHT_ID_UNKNOWN, LighControllerSpy_GetLastId());
    LONGS_EQUALS(LIGHT_STATE_UNKNOWN, LightControllerSpy_GetLastState());
 }
+*/
 
 
