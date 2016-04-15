@@ -31,4 +31,11 @@ struct Time
     Month month;
 };
 
+void TimeService_Create(void);
+void TimeService_Destroy(void);
+int TimeService_GetMinute(void);
+int TimeService_GetDay(void);
+
+void TimeService_GetTime(Time *);
+
 #endif /* INCLUDE_UTIL_TIMESERVICE_H_ */
