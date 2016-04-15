@@ -5,33 +5,31 @@ extern "C"
 
 #include "CppUTest/TestHarness.h"
 
-TEST_GROUP(FakeTimeService)
+TEST_GROUP(TimeService)
 {
     void setup()
     {
-      FakeTimeService_Create();
+      TimeService_Create();
     }
 
     void teardown()
     {
-       FakeTimeService_Destroy();
+       TimeService_Destroy();
     }
 };
 
-TEST(FakeTimeService, Create)
+TEST(TimeService, Create)
 {
-  LONGS_EQUAL(-1, FakeTimeService_GetTime());
+    LONGS_EQUAL(-1, TimeService_GetMinute());
+    LONGS_EQUAL(-1, TimeService_GetDay());
 }
 
-TEST(FakeTimeService, SetMinute)
+TEST(TimeService, Set)
 {
-  FakeTimeService_SetMinute(1200);
-  LONGS_EQUAL(1200, FakeTimeService_GetTime());
+    FakeTimeService_SetMinute(42);
+    LONGS_EQUAL(42, TimeService_GetMinute());
+    FakeTimeService_SetDay(3);
+    LONGS_EQUAL(3, TimeService_GetDay());
 }
 
-TEST(FakeTimeService, SetDay)
-{
-  FakeTimeService_SetDay(TUESDAY);
-  LONGS_EQUAL(TUESDAY, FakeTimeService_GetDay());
-}
 
