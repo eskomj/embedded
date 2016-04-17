@@ -8,6 +8,7 @@
 #ifndef INCLUDE_UTIL_TIMESERVICE_H_
 #define INCLUDE_UTIL_TIMESERVICE_H_
 
+
 typedef enum Day {
     NOT_A_DAY=-4,
     EVERYDAY=-3, WEEKDAY=-2, WEEKEND=-1,
@@ -30,6 +31,7 @@ struct Time
     int dayOfMonth;
     Month month;
 };
+
 
 void TimeService_Create(void);
 void TimeService_Destroy(void);
