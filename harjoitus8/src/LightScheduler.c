@@ -47,6 +47,7 @@ static void operateLight(ScheduledLightEvent * lightEvent)
 static void processEventDueNow(Time * time, ScheduledLightEvent * lightEvent)
 {
 	if (lightEvent->id == UNUSED) return;
+	if (lightEvent->day != EVERYDAY) return;
 	if (lightEvent->minuteOfDay != time->minuteOfDay) return;
 	operateLight(lightEvent);
 }
@@ -73,6 +74,8 @@ void LightScheduler_ScheduleTurnOff(int id, int day, int minuteOfDay)
 {
 	scheduleEvent(id, minuteOfDay, TURN_OFF);
 }
+
+
 
 
 
