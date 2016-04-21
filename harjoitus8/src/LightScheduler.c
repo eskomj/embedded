@@ -45,10 +45,26 @@ static void operateLight(ScheduledLightEvent * lightEvent)
 		LightController_TurnOff(lightEvent->id);
 }
 
+static int DoesLightRespondToday(Time * time, int reactionDay)
+{
+	int today = time->dayOfWeek;
+
+	if (reactionDay == EVERYDAY)
+		return TRUE;
+	if (reactionDay == today)
+		return TRUE;
+	if (reactionDay == WEEKEND && (SATURDAY == today || SUNDAY == today))
+		return TRUE;
+	if (reactionDay == WEEKDAY && today >= MONDAY && today <= FRIDAY)
+		return TRUE;
+	return FALSE;
+}
+
 static void processEventDueNow(Time * time, ScheduledLightEvent * lightEvent)
 {
 	if (lightEvent->id == UNUSED) return;
-	if (lightEvent->day != EVERYDAY && lightEvent->day != TimeService_GetDay()) return;
+	if (!DoesLightRespondToday(time, lightEvent->day))
+		return;
 	if (lightEvent->minuteOfDay != time->minuteOfDay) return;
 	operateLight(lightEvent);
 }
