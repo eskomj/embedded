@@ -39,5 +39,9 @@ int TimeService_GetMinute(void);
 int TimeService_GetDay(void);
 
 void TimeService_GetTime(Time *);
+typedef void (*WakeUpCallback)(void);
+
+void TimeService_SetPeriodicAlarmInSeconds(int seconds, WakeUpCallback);
+void TimeService_CancelPeriodicAlarmInSeconds(int seconds, WakeUpCallback);
 
 #endif /* INCLUDE_UTIL_TIMESERVICE_H_ */
